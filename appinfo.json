@@ -1,0 +1,17 @@
+{
+  "uuid": "75ca02cb-3c2c-46a3-bdb3-c13aa39b33c1",
+  "shortName": "Salt Shaker",
+  "longName": "Salt Shaker",
+  "companyName": "William Xie",
+  "versionCode": 1,
+  "versionLabel": "1.0.0",
+  "watchapp": {
+    "watchface": false
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": []
+  }
+}
