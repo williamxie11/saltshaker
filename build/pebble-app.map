@@ -1,7 +1,7 @@
 Archive member included because of file (symbol)
 
 /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
-                              src/Salt Shaker.c.7.o (app_event_loop)
+                              src/Salt Shaker.c.8.o (accel_data_service_unsubscribe)
 
 Discarded input sections
 
@@ -17,14 +17,12 @@ Discarded input sections
  .jcr           0x0000000000000000        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
  .tm_clone_table
                 0x0000000000000000        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
- .text          0x0000000000000000        0x0 src/Salt Shaker.c.7.o
- .bss           0x0000000000000000        0x0 src/Salt Shaker.c.7.o
- .text          0x0000000000000000        0x0 appinfo.auto.c.7.o
- .bss           0x0000000000000000        0x0 appinfo.auto.c.7.o
+ .text          0x0000000000000000        0x0 src/Salt Shaker.c.8.o
+ .bss           0x0000000000000000        0x0 src/Salt Shaker.c.8.o
+ .text          0x0000000000000000        0x0 appinfo.auto.c.8.o
+ .bss           0x0000000000000000        0x0 appinfo.auto.c.8.o
  .bss           0x0000000000000000        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.accel_data_service_subscribe__deprecated
-                0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
- .text.accel_data_service_unsubscribe
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.accel_service_peek
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
@@ -192,8 +190,6 @@ Discarded input sections
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.dict_write_uint8
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
- .text.fonts_get_system_font
-                0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.fonts_load_custom_font
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.fonts_unload_custom_font
@@ -202,10 +198,6 @@ Discarded input sections
  .text.gbitmap_create_as_sub_bitmap
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.gbitmap_create_with_data
-                0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
- .text.gbitmap_create_with_resource
-                0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
- .text.gbitmap_destroy
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.gmtime   0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.gpath_create
@@ -229,8 +221,6 @@ Discarded input sections
  .text.graphics_context_set_stroke_color
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.graphics_context_set_text_color
-                0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
- .text.graphics_draw_bitmap_in_rect
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.graphics_draw_circle
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
@@ -272,8 +262,6 @@ Discarded input sections
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.inverter_layer_get_layer
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
- .text.layer_create
-                0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.layer_create_with_data
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.layer_destroy
@@ -281,8 +269,6 @@ Discarded input sections
  .text.layer_get_clips
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.layer_get_data
-                0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
- .text.layer_get_frame
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.layer_get_hidden
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
@@ -305,8 +291,6 @@ Discarded input sections
  .text.layer_set_frame
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.layer_set_hidden
-                0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
- .text.layer_set_update_proc
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.light_enable
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
@@ -463,10 +447,7 @@ Discarded input sections
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.sin_lookup
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
- .text.snprintf
-                0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.srand    0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
- .text.strcat   0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.strcmp   0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.strcpy   0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.strftime
@@ -478,8 +459,6 @@ Discarded input sections
  .text.text_layer_get_content_size
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.text_layer_get_text
-                0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
- .text.text_layer_set_font
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.text_layer_set_overflow_mode
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
@@ -577,8 +556,6 @@ Discarded input sections
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.simple_menu_layer_get_menu_layer
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
- .text.accel_data_service_subscribe
-                0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.calloc   0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text.bitmap_layer_get_bitmap
                 0x0000000000000000        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
@@ -603,8 +580,8 @@ Linker script and memory map
 
 LOAD /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
 LOAD /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
-LOAD src/Salt Shaker.c.7.o
-LOAD appinfo.auto.c.7.o
+LOAD src/Salt Shaker.c.8.o
+LOAD appinfo.auto.c.8.o
 LOAD /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a
 START GROUP
 LOAD /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a
@@ -615,130 +592,180 @@ LOAD /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-no
 
 .header         0x0000000000000000       0x82
  *(.pbl_header)
- .pbl_header    0x0000000000000000       0x82 appinfo.auto.c.7.o
+ .pbl_header    0x0000000000000000       0x82 appinfo.auto.c.8.o
                 0x0000000000000000                __pbl_app_info
 
-.text           0x0000000000000084      0x30a
+.text           0x0000000000000084      0x6c0
  *(.text)
  .text          0x0000000000000084       0x14 /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  *(.text.*)
+ .text.layer_update_callback
+                0x0000000000000098       0x3c src/Salt Shaker.c.8.o
  .text.window_unload
-                0x0000000000000098       0x10 src/Salt Shaker.c.7.o
+                0x00000000000000d4       0x10 src/Salt Shaker.c.8.o
  .text.window_load
-                0x00000000000000a8       0x60 src/Salt Shaker.c.7.o
+                0x00000000000000e4       0xf8 src/Salt Shaker.c.8.o
  .text.click_config_provider
-                0x0000000000000108       0x30 src/Salt Shaker.c.7.o
+                0x00000000000001dc       0x30 src/Salt Shaker.c.8.o
  .text.down_click_handler
-                0x0000000000000138       0x24 src/Salt Shaker.c.7.o
+                0x000000000000020c       0xb4 src/Salt Shaker.c.8.o
  .text.up_click_handler
-                0x000000000000015c       0x24 src/Salt Shaker.c.7.o
+                0x00000000000002c0       0xbc src/Salt Shaker.c.8.o
  .text.select_click_handler
-                0x0000000000000180       0x24 src/Salt Shaker.c.7.o
+                0x000000000000037c       0xb4 src/Salt Shaker.c.8.o
  .text.startup.main
-                0x00000000000001a4       0x88 src/Salt Shaker.c.7.o
-                0x00000000000001a4                main
+                0x0000000000000430      0x100 src/Salt Shaker.c.8.o
+                0x0000000000000430                main
+ .text.accel_data_service_unsubscribe
+                0x0000000000000530        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x0000000000000530                accel_data_service_unsubscribe
  .text.app_event_loop
-                0x000000000000022c        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
-                0x000000000000022c                app_event_loop
- .text.app_log  0x0000000000000238        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
-                0x0000000000000238                app_log
+                0x000000000000053c        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x000000000000053c                app_event_loop
+ .text.app_log  0x0000000000000548        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x0000000000000548                app_log
+ .text.fonts_get_system_font
+                0x0000000000000554        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x0000000000000554                fonts_get_system_font
+ .text.gbitmap_create_with_resource
+                0x0000000000000560        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x0000000000000560                gbitmap_create_with_resource
+ .text.gbitmap_destroy
+                0x000000000000056c        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x000000000000056c                gbitmap_destroy
+ .text.graphics_draw_bitmap_in_rect
+                0x0000000000000578        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x0000000000000578                graphics_draw_bitmap_in_rect
  .text.layer_add_child
-                0x0000000000000244        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
-                0x0000000000000244                layer_add_child
+                0x0000000000000584        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x0000000000000584                layer_add_child
+ .text.layer_create
+                0x0000000000000590        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x0000000000000590                layer_create
  .text.layer_get_bounds
-                0x0000000000000250        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
-                0x0000000000000250                layer_get_bounds
- .text.memset   0x000000000000025c        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
-                0x000000000000025c                memset
+                0x000000000000059c        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x000000000000059c                layer_get_bounds
+ .text.layer_get_frame
+                0x00000000000005a8        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x00000000000005a8                layer_get_frame
+ .text.layer_set_update_proc
+                0x00000000000005b4        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x00000000000005b4                layer_set_update_proc
+ .text.memset   0x00000000000005c0        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x00000000000005c0                memset
+ .text.snprintf
+                0x00000000000005cc        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x00000000000005cc                snprintf
+ .text.strcat   0x00000000000005d8        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x00000000000005d8                strcat
  .text.text_layer_create
-                0x0000000000000268        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
-                0x0000000000000268                text_layer_create
+                0x00000000000005e4        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x00000000000005e4                text_layer_create
  .text.text_layer_destroy
-                0x0000000000000274        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
-                0x0000000000000274                text_layer_destroy
+                0x00000000000005f0        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x00000000000005f0                text_layer_destroy
  .text.text_layer_get_layer
-                0x0000000000000280        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
-                0x0000000000000280                text_layer_get_layer
+                0x00000000000005fc        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x00000000000005fc                text_layer_get_layer
  .text.text_layer_set_background_color
-                0x000000000000028c        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
-                0x000000000000028c                text_layer_set_background_color
+                0x0000000000000608        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x0000000000000608                text_layer_set_background_color
+ .text.text_layer_set_font
+                0x0000000000000614        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x0000000000000614                text_layer_set_font
  .text.text_layer_set_text
-                0x0000000000000298        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
-                0x0000000000000298                text_layer_set_text
+                0x0000000000000620        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x0000000000000620                text_layer_set_text
  .text.text_layer_set_text_alignment
-                0x00000000000002a4        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
-                0x00000000000002a4                text_layer_set_text_alignment
+                0x000000000000062c        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x000000000000062c                text_layer_set_text_alignment
  .text.text_layer_set_text_color
-                0x00000000000002b0        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
-                0x00000000000002b0                text_layer_set_text_color
+                0x0000000000000638        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x0000000000000638                text_layer_set_text_color
  .text.window_create
-                0x00000000000002bc        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
-                0x00000000000002bc                window_create
+                0x0000000000000644        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x0000000000000644                window_create
  .text.window_destroy
-                0x00000000000002c8        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
-                0x00000000000002c8                window_destroy
+                0x0000000000000650        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x0000000000000650                window_destroy
  .text.window_get_root_layer
-                0x00000000000002d4        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
-                0x00000000000002d4                window_get_root_layer
+                0x000000000000065c        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x000000000000065c                window_get_root_layer
  .text.window_set_background_color
-                0x00000000000002e0        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
-                0x00000000000002e0                window_set_background_color
+                0x0000000000000668        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x0000000000000668                window_set_background_color
  .text.window_set_click_config_provider
-                0x00000000000002ec        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
-                0x00000000000002ec                window_set_click_config_provider
+                0x0000000000000674        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x0000000000000674                window_set_click_config_provider
  .text.window_set_window_handlers
-                0x00000000000002f8        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
-                0x00000000000002f8                window_set_window_handlers
+                0x0000000000000680        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x0000000000000680                window_set_window_handlers
  .text.window_stack_push
-                0x0000000000000304        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
-                0x0000000000000304                window_stack_push
+                0x000000000000068c        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x000000000000068c                window_stack_push
  .text.window_single_click_subscribe
-                0x0000000000000310        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
-                0x0000000000000310                window_single_click_subscribe
+                0x0000000000000698        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x0000000000000698                window_single_click_subscribe
+ .text.accel_data_service_subscribe
+                0x00000000000006a4        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+                0x00000000000006a4                accel_data_service_subscribe
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x000000000000031c       0x72 src/Salt Shaker.c.7.o
+                0x00000000000006b0       0x94 src/Salt Shaker.c.8.o
 
-.glue_7         0x0000000000000390        0x0
+.glue_7         0x0000000000000744        0x0
  .glue_7        0x0000000000000000        0x0 linker stubs
 
-.glue_7t        0x0000000000000390        0x0
+.glue_7t        0x0000000000000744        0x0
  .glue_7t       0x0000000000000000        0x0 linker stubs
 
-.vfp11_veneer   0x0000000000000390        0x0
+.vfp11_veneer   0x0000000000000744        0x0
  .vfp11_veneer  0x0000000000000000        0x0 linker stubs
 
-.v4_bx          0x0000000000000390        0x0
+.v4_bx          0x0000000000000744        0x0
  .v4_bx         0x0000000000000000        0x0 linker stubs
 
-.iplt           0x0000000000000390        0x0
+.iplt           0x0000000000000744        0x0
  .iplt          0x0000000000000000        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.rel.dyn        0x0000000000000390        0x0
+.rel.dyn        0x0000000000000744        0x0
  .rel.iplt      0x0000000000000000        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.data           0x0000000000000390        0x4
+.data           0x0000000000000744        0x4
  *(.data)
- .data          0x0000000000000390        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
- .data          0x0000000000000390        0x4 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
-                0x0000000000000390                __dso_handle
- .data          0x0000000000000394        0x0 src/Salt Shaker.c.7.o
- .data          0x0000000000000394        0x0 appinfo.auto.c.7.o
- .data          0x0000000000000394        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
- .data          0x0000000000000394        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
- .data          0x0000000000000394        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtn.o
+ .data          0x0000000000000744        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
+ .data          0x0000000000000744        0x4 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
+                0x0000000000000744                __dso_handle
+ .data          0x0000000000000748        0x0 src/Salt Shaker.c.8.o
+ .data          0x0000000000000748        0x0 appinfo.auto.c.8.o
+ .data          0x0000000000000748        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+ .data          0x0000000000000748        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
+ .data          0x0000000000000748        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtn.o
  *(.data.*)
 
-.igot.plt       0x0000000000000394        0x0
+.igot.plt       0x0000000000000748        0x0
  .igot.plt      0x0000000000000000        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.bss            0x0000000000000394        0x8
+.bss            0x0000000000000748       0x30
  *(.bss)
  *(.bss.*)
- .bss.text_layer
-                0x0000000000000394        0x4 src/Salt Shaker.c.7.o
- .bss.window    0x0000000000000398        0x4 src/Salt Shaker.c.7.o
+ .bss.sps       0x0000000000000748        0x4 src/Salt Shaker.c.8.o
+ .bss.salt      0x000000000000074c        0x4 src/Salt Shaker.c.8.o
+ .bss.buffer    0x0000000000000750        0xa src/Salt Shaker.c.8.o
+ *fill*         0x000000000000075a        0x2 
+ .bss.image     0x000000000000075c        0x4 src/Salt Shaker.c.8.o
+ .bss.salt_layer
+                0x0000000000000760        0x4 src/Salt Shaker.c.8.o
+ .bss.saltImage
+                0x0000000000000764        0x4 src/Salt Shaker.c.8.o
+ .bss.notif_layer
+                0x0000000000000768        0x4 src/Salt Shaker.c.8.o
+ .bss.notification
+                0x000000000000076c        0x4 src/Salt Shaker.c.8.o
+ .bss.sps_layer
+                0x0000000000000770        0x4 src/Salt Shaker.c.8.o
+ .bss.window    0x0000000000000774        0x4 src/Salt Shaker.c.8.o
 
 DISCARD
  libc.a(*)
@@ -754,9 +781,9 @@ OUTPUT(/home/william/Documents/saltshaker/build/pebble-app.elf elf32-littlearm)
  .ARM.attributes
                 0x0000000000000019       0x29 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
  .ARM.attributes
-                0x0000000000000042       0x33 src/Salt Shaker.c.7.o
+                0x0000000000000042       0x33 src/Salt Shaker.c.8.o
  .ARM.attributes
-                0x0000000000000075       0x33 appinfo.auto.c.7.o
+                0x0000000000000075       0x33 appinfo.auto.c.8.o
  .ARM.attributes
                 0x00000000000000a8       0x21 /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .ARM.attributes
@@ -767,39 +794,39 @@ OUTPUT(/home/william/Documents/saltshaker/build/pebble-app.elf elf32-littlearm)
 .comment        0x0000000000000000       0x4e
  .comment       0x0000000000000000       0x4e /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
                                          0x4f (size before relaxing)
- .comment       0x0000000000000000       0x4f src/Salt Shaker.c.7.o
- .comment       0x0000000000000000       0x4f appinfo.auto.c.7.o
+ .comment       0x0000000000000000       0x4f src/Salt Shaker.c.8.o
+ .comment       0x0000000000000000       0x4f appinfo.auto.c.8.o
  .comment       0x0000000000000000       0x4f /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
 
-.debug_info     0x0000000000000000      0xc0f
- .debug_info    0x0000000000000000      0x8e3 src/Salt Shaker.c.7.o
- .debug_info    0x00000000000008e3      0x32c appinfo.auto.c.7.o
+.debug_info     0x0000000000000000     0x13a9
+ .debug_info    0x0000000000000000     0x1081 src/Salt Shaker.c.8.o
+ .debug_info    0x0000000000001081      0x328 appinfo.auto.c.8.o
 
-.debug_abbrev   0x0000000000000000      0x313
- .debug_abbrev  0x0000000000000000      0x25f src/Salt Shaker.c.7.o
- .debug_abbrev  0x000000000000025f       0xb4 appinfo.auto.c.7.o
+.debug_abbrev   0x0000000000000000      0x3ca
+ .debug_abbrev  0x0000000000000000      0x31f src/Salt Shaker.c.8.o
+ .debug_abbrev  0x000000000000031f       0xab appinfo.auto.c.8.o
 
-.debug_loc      0x0000000000000000      0x21e
- .debug_loc     0x0000000000000000      0x21e src/Salt Shaker.c.7.o
+.debug_loc      0x0000000000000000      0x2ec
+ .debug_loc     0x0000000000000000      0x2ec src/Salt Shaker.c.8.o
 
-.debug_aranges  0x0000000000000000       0x68
+.debug_aranges  0x0000000000000000       0x70
  .debug_aranges
-                0x0000000000000000       0x50 src/Salt Shaker.c.7.o
+                0x0000000000000000       0x58 src/Salt Shaker.c.8.o
  .debug_aranges
-                0x0000000000000050       0x18 appinfo.auto.c.7.o
+                0x0000000000000058       0x18 appinfo.auto.c.8.o
 
-.debug_ranges   0x0000000000000000       0x40
- .debug_ranges  0x0000000000000000       0x40 src/Salt Shaker.c.7.o
+.debug_ranges   0x0000000000000000       0x78
+ .debug_ranges  0x0000000000000000       0x78 src/Salt Shaker.c.8.o
 
-.debug_line     0x0000000000000000      0x304
- .debug_line    0x0000000000000000      0x1e6 src/Salt Shaker.c.7.o
- .debug_line    0x00000000000001e6      0x11e appinfo.auto.c.7.o
+.debug_line     0x0000000000000000      0x3f6
+ .debug_line    0x0000000000000000      0x2d8 src/Salt Shaker.c.8.o
+ .debug_line    0x00000000000002d8      0x11e appinfo.auto.c.8.o
 
-.debug_str      0x0000000000000000      0x659
- .debug_str     0x0000000000000000      0x4d1 src/Salt Shaker.c.7.o
-                                        0x55b (size before relaxing)
- .debug_str     0x00000000000004d1      0x188 appinfo.auto.c.7.o
-                                        0x283 (size before relaxing)
+.debug_str      0x0000000000000000      0x876
+ .debug_str     0x0000000000000000      0x720 src/Salt Shaker.c.8.o
+                                        0x7c5 (size before relaxing)
+ .debug_str     0x0000000000000720      0x156 appinfo.auto.c.8.o
+                                        0x290 (size before relaxing)
 
-.debug_frame    0x0000000000000000       0xc4
- .debug_frame   0x0000000000000000       0xc4 src/Salt Shaker.c.7.o
+.debug_frame    0x0000000000000000       0xf0
+ .debug_frame   0x0000000000000000       0xf0 src/Salt Shaker.c.8.o

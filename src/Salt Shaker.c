@@ -24,6 +24,9 @@ static TextLayer * salt_layer;
 static int salt;
 static int sps; // "Salt Per Second"
 static char * notification; 
+  
+ //  
+static char buffer[10];
 
 static int costGrandpa = 10;   
 static int costFactory = 50;
@@ -41,6 +44,10 @@ static bool hasEnoughSalt(int cost) {
     return true;
   }
   return false;
+}
+
+static char * adjustSPS(int amount) {
+  return "ADJUST SPS";
 }
 
 // 1 = Salty Grandpa | 2 = Salt Factory | 3 = Salt Mine
@@ -66,6 +73,7 @@ static void buy(int i) {
   }
 }
 
+
 /* ------------------------------------------------------- */
 /* -              Pebble Smartwatch Handlers             - */
 /* ------------------------------------------------------- */
@@ -76,11 +84,13 @@ static void up_click_handler(ClickRecognizerRef recognizer, void * context) {
   text_layer_set_text(notif_layer, notification);
   text_layer_set_text_color(notif_layer, GColorWhite);
   // Adjust SPS
-  text_layer_set_text(sps_layer, "+10");
+  snprintf(buffer, 10, "%d", sps);
+  text_layer_set_text(sps_layer, buffer);
   text_layer_set_text_color(sps_layer, GColorWhite);
   // Adjust salt amount
-  text_layer_set_text(salt_layer, "13371114493");
-  text_layer_set_font(salt_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
+  snprintf(buffer, 10, "%d", salt);
+  text_layer_set_text(salt_layer, strcat("+", buffer));
+  text_layer_set_font(salt_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
   text_layer_set_text_color(salt_layer, GColorWhite);
 }
 
@@ -89,11 +99,13 @@ static void select_click_handler(ClickRecognizerRef recognizer, void * context) 
   text_layer_set_text(notif_layer, "Built a Salt Mine!");
   text_layer_set_text_color(notif_layer, GColorWhite);
   // Adjust SPS
-  text_layer_set_text(sps_layer, "+100");
+  snprintf(buffer, 10, "%d", sps);
+  text_layer_set_text(sps_layer, strcat("+", buffer));
   text_layer_set_text_color(sps_layer, GColorWhite);
   // Adjust salt amount
-  text_layer_set_text(salt_layer, "696919691");
-  text_layer_set_font(salt_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
+  snprintf(buffer, 10, "%d", salt);
+  text_layer_set_text(salt_layer, buffer);
+  text_layer_set_font(salt_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
   text_layer_set_text_color(salt_layer, GColorWhite);
 }
 
@@ -102,11 +114,13 @@ static void down_click_handler(ClickRecognizerRef recognizer, void * context) {
   text_layer_set_text(notif_layer, "Hired a Salty Grandpa!");
   text_layer_set_text_color(notif_layer, GColorWhite);
   // Adjust SPS
-  text_layer_set_text(sps_layer, "+1");
+  snprintf(buffer, 10, "%d", sps);
+  text_layer_set_text(sps_layer, buffer);
   text_layer_set_text_color(sps_layer, GColorWhite);
   // Adjust salt amount
-  text_layer_set_text(salt_layer, "4222242515");
-  text_layer_set_font(salt_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
+  snprintf(buffer, 10, "%d", salt);
+  text_layer_set_text(salt_layer, strcat("+", buffer));
+  text_layer_set_font(salt_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
   text_layer_set_text_color(salt_layer, GColorWhite);
 }
 
@@ -122,8 +136,6 @@ static void layer_update_callback(Layer * me, GContext * ctx) {
 }
 
 static void window_load(Window * window) {
-  salt = 0; // this needs to be loaded in instead of resetting
-  sps = 0; // this needs to be loaded in instead of resetting
   Layer * window_layer = window_get_root_layer(window);
   GRect bounds = layer_get_bounds(window_layer);
   // Set up the notifications text layer
@@ -132,12 +144,12 @@ static void window_load(Window * window) {
   text_layer_set_text_alignment(notif_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(notif_layer));
   // Set up the salt per second text layer
-  sps_layer = text_layer_create((GRect) { .origin = {0, bounds.size.h - 40}, .size = {bounds.size.w, 15} });
+  sps_layer = text_layer_create((GRect) { .origin = {0, bounds.size.h - 50}, .size = {bounds.size.w, 15} });
   text_layer_set_background_color(sps_layer, GColorBlack);
   text_layer_set_text_alignment(sps_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(sps_layer));
   // Set up the salt text layer
-  salt_layer = text_layer_create((GRect) { .origin = {0, bounds.size.h - 25}, .size = {bounds.size.w, 25} });
+  salt_layer = text_layer_create((GRect) { .origin = {0, bounds.size.h - 30}, .size = {bounds.size.w, 30} });
   text_layer_set_background_color(salt_layer, GColorBlack);
   text_layer_set_text_alignment(salt_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(salt_layer));
@@ -148,6 +160,8 @@ static void window_unload(Window * window) {
 }
 
 static void init(void) {
+  salt = 99999; // this needs to be loaded in instead of resetting
+  sps = 0; // this needs to be loaded in instead of resetting
   window = window_create();
   window_set_click_config_provider(window, click_config_provider);
   window_set_window_handlers(window, (WindowHandlers) {
@@ -165,10 +179,11 @@ static void init(void) {
   layer_set_update_proc(saltImage, layer_update_callback);
   layer_add_child(window_layer, saltImage);
 
-  //accel_data_service_subscribe(0, NULL);
+  accel_data_service_subscribe(0, NULL);
 }
 
 static void deinit(void) {
+  accel_data_service_unsubscribe();
   window_destroy(window);
 }
 
