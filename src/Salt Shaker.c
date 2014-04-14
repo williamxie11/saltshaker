@@ -11,9 +11,6 @@ of salty grandpas, build salt farms, and more to create your salt empire!
 #include <string.h>
 
 static Window * window;
-static AppTimer * timer;
-static GBitmap * image;
-static Layer * saltImage;
 
 /* --- TEXT LAYERS --- */
 static TextLayer * notif_layer;
@@ -24,10 +21,9 @@ static TextLayer * salt_layer;
 static int salt;
 static int sps; // "Salt Per Second"
 static char * notification; 
-  
- //  
-static char buffer[10];
-
+    
+static char salt_buffer[10];
+/*
 static int costGrandpa = 10;   
 static int costFactory = 50;
 static int costMine = 250;
@@ -35,44 +31,13 @@ static int costMine = 250;
 static int spsGrandpa = 1;
 static int spsFactory = 10;
 static int spsMine = 100;
+*/
 
 /* ------------------------------------------------------- */
 /* -                 Salty Game Functions                - */
 /* ------------------------------------------------------- */
-static bool hasEnoughSalt(int cost) {
-  if (salt >= cost) {
-    return true;
-  }
-  return false;
-}
 
-static char * adjustSPS(int amount) {
-  return "ADJUST SPS";
-}
-
-// 1 = Salty Grandpa | 2 = Salt Factory | 3 = Salt Mine
-// Assumes affordability before function call
-static void buy(int i) {
-  if (i == costGrandpa) {
-    salt = salt - costGrandpa;
-    sps = sps + spsGrandpa;
-    notification = "Hired a Salty Grandpa!";
-  }
-  else if (i == costFactory) {
-    salt = salt - costFactory;
-    sps = sps + spsFactory;
-    notification = "Bought a Salt Factory!";
-  }
-  else if (i == costMine) {
-    salt = salt - costMine;
-    sps = sps + costMine;
-    notification = "Built a Salt Mine!";
-  }
-  else {
-    APP_LOG(APP_LOG_LEVEL_DEBUG, "Invalid item. Could not buy.");
-  }
-}
-
+// TODO: Actual game functions
 
 /* ------------------------------------------------------- */
 /* -              Pebble Smartwatch Handlers             - */
@@ -83,14 +48,17 @@ static void up_click_handler(ClickRecognizerRef recognizer, void * context) {
   notification = "Bought a Salt Factory!";
   text_layer_set_text(notif_layer, notification);
   text_layer_set_text_color(notif_layer, GColorWhite);
+  /*
   // Adjust SPS
   snprintf(buffer, 10, "%d", sps);
-  text_layer_set_text(sps_layer, buffer);
+  text_layer_set_text(sps_layer, "sps");
+  text_layer_set_font(sps_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14));
   text_layer_set_text_color(sps_layer, GColorWhite);
+  */
   // Adjust salt amount
-  snprintf(buffer, 10, "%d", salt);
-  text_layer_set_text(salt_layer, strcat("+", buffer));
-  text_layer_set_font(salt_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
+  snprintf(salt_buffer, 10, "%d", salt);
+  text_layer_set_text(salt_layer, salt_buffer);
+  text_layer_set_font(salt_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
   text_layer_set_text_color(salt_layer, GColorWhite);
 }
 
@@ -99,13 +67,10 @@ static void select_click_handler(ClickRecognizerRef recognizer, void * context) 
   text_layer_set_text(notif_layer, "Built a Salt Mine!");
   text_layer_set_text_color(notif_layer, GColorWhite);
   // Adjust SPS
-  snprintf(buffer, 10, "%d", sps);
-  text_layer_set_text(sps_layer, strcat("+", buffer));
-  text_layer_set_text_color(sps_layer, GColorWhite);
   // Adjust salt amount
-  snprintf(buffer, 10, "%d", salt);
-  text_layer_set_text(salt_layer, buffer);
-  text_layer_set_font(salt_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
+  snprintf(salt_buffer, 10, "%d", salt);
+  text_layer_set_text(salt_layer, salt_buffer);
+  text_layer_set_font(salt_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
   text_layer_set_text_color(salt_layer, GColorWhite);
 }
 
@@ -114,25 +79,24 @@ static void down_click_handler(ClickRecognizerRef recognizer, void * context) {
   text_layer_set_text(notif_layer, "Hired a Salty Grandpa!");
   text_layer_set_text_color(notif_layer, GColorWhite);
   // Adjust SPS
-  snprintf(buffer, 10, "%d", sps);
-  text_layer_set_text(sps_layer, buffer);
-  text_layer_set_text_color(sps_layer, GColorWhite);
   // Adjust salt amount
-  snprintf(buffer, 10, "%d", salt);
-  text_layer_set_text(salt_layer, strcat("+", buffer));
-  text_layer_set_font(salt_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
+  snprintf(salt_buffer, 10, "%d", salt);
+  text_layer_set_text(salt_layer, salt_buffer);
+  text_layer_set_font(salt_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
   text_layer_set_text_color(salt_layer, GColorWhite);
+}
+
+static void accel_tap_handler(AccelAxisType axis, int32_t direction) {
+  if (axis == 1)
+  {
+    salt = 999;
+  }
 }
 
 static void click_config_provider(void * context) {
   window_single_click_subscribe(BUTTON_ID_SELECT, select_click_handler);
   window_single_click_subscribe(BUTTON_ID_UP, up_click_handler);
   window_single_click_subscribe(BUTTON_ID_DOWN, down_click_handler);
-}
-
-static void layer_update_callback(Layer * me, GContext * ctx) {
-  GRect bounds = image->bounds;
-  graphics_draw_bitmap_in_rect(ctx, image, (GRect) { .origin = { 0, 30 }, .size = bounds.size });
 }
 
 static void window_load(Window * window) {
@@ -144,7 +108,7 @@ static void window_load(Window * window) {
   text_layer_set_text_alignment(notif_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(notif_layer));
   // Set up the salt per second text layer
-  sps_layer = text_layer_create((GRect) { .origin = {0, bounds.size.h - 50}, .size = {bounds.size.w, 15} });
+  sps_layer = text_layer_create((GRect) { .origin = {0, bounds.size.h - 60}, .size = {bounds.size.w, 20} });
   text_layer_set_background_color(sps_layer, GColorBlack);
   text_layer_set_text_alignment(sps_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(sps_layer));
@@ -160,8 +124,10 @@ static void window_unload(Window * window) {
 }
 
 static void init(void) {
-  salt = 99999; // this needs to be loaded in instead of resetting
+  salt = 0; // this needs to be loaded in instead of resetting
   sps = 0; // this needs to be loaded in instead of resetting
+
+  // Load up our window and layers
   window = window_create();
   window_set_click_config_provider(window, click_config_provider);
   window_set_window_handlers(window, (WindowHandlers) {
@@ -172,18 +138,12 @@ static void init(void) {
   window_stack_push(window, animated);
   window_set_background_color(window, GColorBlack);
 
-  Layer * window_layer = window_get_root_layer(window);
-  GRect bounds = layer_get_frame(window_layer);
-
-  saltImage = layer_create(bounds);
-  layer_set_update_proc(saltImage, layer_update_callback);
-  layer_add_child(window_layer, saltImage);
-
-  accel_data_service_subscribe(0, NULL);
+  // Load up shake detection
+  accel_tap_service_subscribe(&accel_tap_handler);
 }
 
 static void deinit(void) {
-  accel_data_service_unsubscribe();
+  accel_tap_service_unsubscribe();
   window_destroy(window);
 }
 
@@ -194,9 +154,6 @@ int main(void) {
 
   APP_LOG(APP_LOG_LEVEL_DEBUG, "Done initializing, pushed window: %p", window);
 
-  image = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_SALT);
-
   app_event_loop();
-  gbitmap_destroy(image);
   deinit();
 }
