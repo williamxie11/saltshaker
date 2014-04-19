@@ -24,9 +24,9 @@ static char * notification;
 static char notification_buffer[30]; // For use in creating notifications with integers
 static char salt_buffer[15]; 
 static char sps_buffer[25]; 
-static char grandpa_buffer[5];
-static char factory_buffer[5];
-static char mine_buffer[5];
+static char grandpa_buffer[25];
+static char factory_buffer[25];
+static char mine_buffer[25];
 
 // Cost of items
 static int costGrandpa = 10;   
@@ -39,9 +39,9 @@ static int spsFactory = 10;
 static int spsMine = 100;
 
 // Total item count
-static int countGrandpa = 0;
-static int countFactory = 0;
-static int countMine = 0;
+static int countGrandpa;
+static int countFactory;
+static int countMine;
 
 /* ------------------------------------------------------- */
 /* -                 Salty Game Functions                - */
@@ -97,10 +97,10 @@ static void buy(int item) {
     // Player can't afford item. Display cost.
     int cost = 0;
     char * toBuy;
-    if (item == 1) { cost = costGrandpa; toBuy = "Salty Grandpa"; }
-    if (item == 2) { cost = costFactory; toBuy = "Salt Factory"; }
-    if (item == 3) { cost = costMine; toBuy = "Salt Mine"; }
-    snprintf(notification_buffer, 30, "%s: %d Salt", toBuy, cost);
+    if (item == 1) { cost = costGrandpa; /*toBuy = "Salty Grandpa";*/ }
+    if (item == 2) { cost = costFactory; /*toBuy = "Salt Factory";*/ }
+    if (item == 3) { cost = costMine; /*toBuy = "Salt Mine";*/ }
+    snprintf(notification_buffer, 30, "Cost: %d Salt", cost);
     notification = notification_buffer;
   }
 }
@@ -126,19 +126,19 @@ static void updateSPS() {
 // 1 = Grandpa | 2 = Factory | 3 = Mine
 static void updateCount(int item) {
   if (item == 1) {
-    snprintf(grandpa_buffer, 5, "%d", countGrandpa);
+    snprintf(grandpa_buffer, 25, "%d Grandpas", countGrandpa);
     text_layer_set_text(grandpa_layer, grandpa_buffer);
     text_layer_set_font(grandpa_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14));
     text_layer_set_text_color(grandpa_layer, GColorWhite);
   }
   else if (item == 2) {
-    snprintf(factory_buffer, 5, "%d", countFactory);
+    snprintf(factory_buffer, 25, "%d Factories", countFactory);
     text_layer_set_text(factory_layer, factory_buffer);
     text_layer_set_font(factory_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14));
     text_layer_set_text_color(factory_layer, GColorWhite);
   }
   else if (item == 3) {
-    snprintf(mine_buffer, 5, "%d", countMine);
+    snprintf(mine_buffer, 25, "%d Mines", countMine);
     text_layer_set_text(mine_layer, mine_buffer);
     text_layer_set_font(mine_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14));
     text_layer_set_text_color(mine_layer, GColorWhite);
@@ -209,17 +209,17 @@ static void window_load(Window * window) {
   text_layer_set_text_alignment(sps_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(sps_layer));
   // Set up Grandpa Count
-  grandpa_layer = text_layer_create((GRect) { .origin = {bounds.size.w/2, 90}, .size = {bounds.size.w/2, 20} });
+  grandpa_layer = text_layer_create((GRect) { .origin = {bounds.size.w/2 - 20, 90}, .size = {bounds.size.w/2 + 20, 20} });
   text_layer_set_background_color(grandpa_layer, GColorBlack);
   text_layer_set_text_alignment(grandpa_layer, GTextAlignmentLeft);
   layer_add_child(window_layer, text_layer_get_layer(grandpa_layer));
   // Set up Factory Count
-  factory_layer = text_layer_create((GRect) { .origin = {bounds.size.w/2, 110}, .size = {bounds.size.w/2, 20} });
+  factory_layer = text_layer_create((GRect) { .origin = {bounds.size.w/2 - 20, 110}, .size = {bounds.size.w/2 + 20, 20} });
   text_layer_set_background_color(factory_layer, GColorBlack);
   text_layer_set_text_alignment(factory_layer, GTextAlignmentLeft);
   layer_add_child(window_layer, text_layer_get_layer(factory_layer));
   // Set up Mine Count
-  mine_layer = text_layer_create((GRect) { .origin = {bounds.size.w/2, 130}, .size = {bounds.size.w/2, 20} });
+  mine_layer = text_layer_create((GRect) { .origin = {bounds.size.w/2 - 20, 130}, .size = {bounds.size.w/2 + 20, 20} });
   text_layer_set_background_color(mine_layer, GColorBlack);
   text_layer_set_text_alignment(mine_layer, GTextAlignmentLeft);
   layer_add_child(window_layer, text_layer_get_layer(mine_layer));
@@ -238,11 +238,11 @@ static void window_unload(Window * window) {
 
 static void init(void) {
   notification = "Getting salty aren't we?";
-  salt = 123456; // this needs to be loaded in instead of resetting
+  salt = 99999; // this needs to be loaded in instead of resetting
   sps = 0; // this needs to be loaded in instead of resetting
-  countGrandpa = countFactory = countMine = 0; // this needs to be loaded in instead of resetting
+  countGrandpa = countFactory = countMine = 999; // this needs to be loaded in instead of resetting
 
-  // Load up our window and layers
+  // Load up our window and layer
   window = window_create();
   window_set_click_config_provider(window, click_config_provider);
   window_set_window_handlers(window, (WindowHandlers) {
