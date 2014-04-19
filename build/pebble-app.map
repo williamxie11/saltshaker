@@ -616,7 +616,7 @@ LOAD /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-no
  .pbl_header    0x0000000000000000       0x82 appinfo.auto.c.7.o
                 0x0000000000000000                __pbl_app_info
 
-.text           0x0000000000000084     0x11cc
+.text           0x0000000000000084     0x11c4
  *(.text)
  .text          0x0000000000000084       0x14 /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
  .text          0x0000000000000098      0x370 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_addsubdf3.o)
@@ -649,22 +649,22 @@ LOAD /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-no
  .text.window_unload
                 0x00000000000008b8       0x5c src/Salt Shaker.c.7.o
  .text.window_load
-                0x0000000000000914      0x1d8 src/Salt Shaker.c.7.o
+                0x0000000000000914      0x1dc src/Salt Shaker.c.7.o
  .text.click_config_provider
-                0x0000000000000aec       0x30 src/Salt Shaker.c.7.o
+                0x0000000000000af0       0x30 src/Salt Shaker.c.7.o
  .text.updateSalt
-                0x0000000000000b1c       0x58 src/Salt Shaker.c.7.o
+                0x0000000000000b20       0x58 src/Salt Shaker.c.7.o
  .text.updateSPS
-                0x0000000000000b74       0x58 src/Salt Shaker.c.7.o
+                0x0000000000000b78       0x58 src/Salt Shaker.c.7.o
  .text.select_click_handler
-                0x0000000000000bcc      0x108 src/Salt Shaker.c.7.o
+                0x0000000000000bd0      0x108 src/Salt Shaker.c.7.o
  .text.up_click_handler
-                0x0000000000000cd4      0x108 src/Salt Shaker.c.7.o
+                0x0000000000000cd8      0x108 src/Salt Shaker.c.7.o
  .text.down_click_handler
-                0x0000000000000ddc      0x108 src/Salt Shaker.c.7.o
+                0x0000000000000de0      0x108 src/Salt Shaker.c.7.o
  .text.startup.main
-                0x0000000000000ee4       0xec src/Salt Shaker.c.7.o
-                0x0000000000000ee4                main
+                0x0000000000000ee8       0xe8 src/Salt Shaker.c.7.o
+                0x0000000000000ee8                main
  .text.accel_data_service_unsubscribe
                 0x0000000000000fd0        0xc /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
                 0x0000000000000fd0                accel_data_service_unsubscribe
@@ -743,92 +743,92 @@ LOAD /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-no
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x0000000000001108      0x148 src/Salt Shaker.c.7.o
+                0x0000000000001108      0x140 src/Salt Shaker.c.7.o
 
-.glue_7         0x0000000000001250        0x0
+.glue_7         0x0000000000001248        0x0
  .glue_7        0x0000000000000000        0x0 linker stubs
 
-.glue_7t        0x0000000000001250        0x0
+.glue_7t        0x0000000000001248        0x0
  .glue_7t       0x0000000000000000        0x0 linker stubs
 
-.vfp11_veneer   0x0000000000001250        0x0
+.vfp11_veneer   0x0000000000001248        0x0
  .vfp11_veneer  0x0000000000000000        0x0 linker stubs
 
-.v4_bx          0x0000000000001250        0x0
+.v4_bx          0x0000000000001248        0x0
  .v4_bx         0x0000000000000000        0x0 linker stubs
 
-.iplt           0x0000000000001250        0x0
+.iplt           0x0000000000001248        0x0
  .iplt          0x0000000000000000        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.rel.dyn        0x0000000000001250        0x0
+.rel.dyn        0x0000000000001248        0x0
  .rel.iplt      0x0000000000000000        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.data           0x0000000000001250       0x10
+.data           0x0000000000001248       0x10
  *(.data)
- .data          0x0000000000001250        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
- .data          0x0000000000001250        0x4 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
-                0x0000000000001250                __dso_handle
- .data          0x0000000000001254        0x0 src/Salt Shaker.c.7.o
- .data          0x0000000000001254        0x0 appinfo.auto.c.7.o
- .data          0x0000000000001254        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
- .data          0x0000000000001254        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_addsubdf3.o)
- .data          0x0000000000001254        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_muldivdf3.o)
- .data          0x0000000000001254        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixdfsi.o)
- .data          0x0000000000001254        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
- .data          0x0000000000001254        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtn.o
+ .data          0x0000000000001248        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
+ .data          0x0000000000001248        0x4 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
+                0x0000000000001248                __dso_handle
+ .data          0x000000000000124c        0x0 src/Salt Shaker.c.7.o
+ .data          0x000000000000124c        0x0 appinfo.auto.c.7.o
+ .data          0x000000000000124c        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/Pebble/lib/libpebble.a(tmpMw9aXupebble.o)
+ .data          0x000000000000124c        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_addsubdf3.o)
+ .data          0x000000000000124c        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_muldivdf3.o)
+ .data          0x000000000000124c        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixdfsi.o)
+ .data          0x000000000000124c        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
+ .data          0x000000000000124c        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtn.o
  *(.data.*)
  .data.costFactory
-                0x0000000000001254        0x4 src/Salt Shaker.c.7.o
+                0x000000000000124c        0x4 src/Salt Shaker.c.7.o
  .data.costGrandpa
-                0x0000000000001258        0x4 src/Salt Shaker.c.7.o
+                0x0000000000001250        0x4 src/Salt Shaker.c.7.o
  .data.costMine
-                0x000000000000125c        0x4 src/Salt Shaker.c.7.o
+                0x0000000000001254        0x4 src/Salt Shaker.c.7.o
 
-.igot.plt       0x0000000000001260        0x0
+.igot.plt       0x0000000000001258        0x0
  .igot.plt      0x0000000000000000        0x0 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
 
-.bss            0x0000000000001260       0xcc
+.bss            0x0000000000001258       0xcc
  *(.bss)
  *(.bss.*)
  .bss.countFactory
-                0x0000000000001260        0x4 src/Salt Shaker.c.7.o
- .bss.sps       0x0000000000001264        0x4 src/Salt Shaker.c.7.o
- .bss.salt      0x0000000000001268        0x4 src/Salt Shaker.c.7.o
+                0x0000000000001258        0x4 src/Salt Shaker.c.7.o
+ .bss.sps       0x000000000000125c        0x4 src/Salt Shaker.c.7.o
+ .bss.salt      0x0000000000001260        0x4 src/Salt Shaker.c.7.o
  .bss.notification_buffer
-                0x000000000000126c       0x1e src/Salt Shaker.c.7.o
- *fill*         0x000000000000128a        0x2 
+                0x0000000000001264       0x1e src/Salt Shaker.c.7.o
+ *fill*         0x0000000000001282        0x2 
  .bss.countGrandpa
-                0x000000000000128c        0x4 src/Salt Shaker.c.7.o
+                0x0000000000001284        0x4 src/Salt Shaker.c.7.o
  .bss.factory_layer
-                0x0000000000001290        0x4 src/Salt Shaker.c.7.o
+                0x0000000000001288        0x4 src/Salt Shaker.c.7.o
  .bss.countMine
-                0x0000000000001294        0x4 src/Salt Shaker.c.7.o
+                0x000000000000128c        0x4 src/Salt Shaker.c.7.o
  .bss.salt_layer
-                0x0000000000001298        0x4 src/Salt Shaker.c.7.o
+                0x0000000000001290        0x4 src/Salt Shaker.c.7.o
  .bss.mine_buffer
-                0x000000000000129c       0x19 src/Salt Shaker.c.7.o
+                0x0000000000001294       0x19 src/Salt Shaker.c.7.o
  .bss.factory_buffer
-                0x00000000000012b5       0x19 src/Salt Shaker.c.7.o
- *fill*         0x00000000000012ce        0x2 
+                0x00000000000012ad       0x19 src/Salt Shaker.c.7.o
+ *fill*         0x00000000000012c6        0x2 
  .bss.grandpa_layer
-                0x00000000000012d0        0x4 src/Salt Shaker.c.7.o
+                0x00000000000012c8        0x4 src/Salt Shaker.c.7.o
  .bss.grandpa_buffer
-                0x00000000000012d4       0x19 src/Salt Shaker.c.7.o
+                0x00000000000012cc       0x19 src/Salt Shaker.c.7.o
  .bss.sps_buffer
-                0x00000000000012ed       0x19 src/Salt Shaker.c.7.o
- *fill*         0x0000000000001306        0x2 
+                0x00000000000012e5       0x19 src/Salt Shaker.c.7.o
+ *fill*         0x00000000000012fe        0x2 
  .bss.notif_layer
-                0x0000000000001308        0x4 src/Salt Shaker.c.7.o
+                0x0000000000001300        0x4 src/Salt Shaker.c.7.o
  .bss.notification
-                0x000000000000130c        0x4 src/Salt Shaker.c.7.o
+                0x0000000000001304        0x4 src/Salt Shaker.c.7.o
  .bss.sps_layer
-                0x0000000000001310        0x4 src/Salt Shaker.c.7.o
+                0x0000000000001308        0x4 src/Salt Shaker.c.7.o
  .bss.salt_buffer
-                0x0000000000001314        0xf src/Salt Shaker.c.7.o
- *fill*         0x0000000000001323        0x1 
+                0x000000000000130c        0xf src/Salt Shaker.c.7.o
+ *fill*         0x000000000000131b        0x1 
  .bss.mine_layer
-                0x0000000000001324        0x4 src/Salt Shaker.c.7.o
- .bss.window    0x0000000000001328        0x4 src/Salt Shaker.c.7.o
+                0x000000000000131c        0x4 src/Salt Shaker.c.7.o
+ .bss.window    0x0000000000001320        0x4 src/Salt Shaker.c.7.o
 
 DISCARD
  libc.a(*)
@@ -899,12 +899,12 @@ OUTPUT(/home/william/Documents/saltshaker/build/pebble-app.elf elf32-littlearm)
 .debug_ranges   0x0000000000000000      0x140
  .debug_ranges  0x0000000000000000      0x140 src/Salt Shaker.c.7.o
 
-.debug_line     0x0000000000000000      0x962
- .debug_line    0x0000000000000000      0x38e src/Salt Shaker.c.7.o
- .debug_line    0x000000000000038e      0x11e appinfo.auto.c.7.o
- .debug_line    0x00000000000004ac      0x20a /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_addsubdf3.o)
- .debug_line    0x00000000000006b6      0x226 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_muldivdf3.o)
- .debug_line    0x00000000000008dc       0x86 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixdfsi.o)
+.debug_line     0x0000000000000000      0x961
+ .debug_line    0x0000000000000000      0x38d src/Salt Shaker.c.7.o
+ .debug_line    0x000000000000038d      0x11e appinfo.auto.c.7.o
+ .debug_line    0x00000000000004ab      0x20a /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_addsubdf3.o)
+ .debug_line    0x00000000000006b5      0x226 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_muldivdf3.o)
+ .debug_line    0x00000000000008db       0x86 /home/william/pebble-dev/PebbleSDK-2.0.2/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a(_arm_fixdfsi.o)
 
 .debug_str      0x0000000000000000      0x85e
  .debug_str     0x0000000000000000      0x6d6 src/Salt Shaker.c.7.o

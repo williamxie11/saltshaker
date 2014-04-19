@@ -209,17 +209,17 @@ static void window_load(Window * window) {
   text_layer_set_text_alignment(sps_layer, GTextAlignmentCenter);
   layer_add_child(window_layer, text_layer_get_layer(sps_layer));
   // Set up Grandpa Count
-  grandpa_layer = text_layer_create((GRect) { .origin = {bounds.size.w/2 - 20, 90}, .size = {bounds.size.w/2 + 20, 20} });
+  grandpa_layer = text_layer_create((GRect) { .origin = {bounds.size.w/2 - 10, 90}, .size = {bounds.size.w/2 + 10, 20} });
   text_layer_set_background_color(grandpa_layer, GColorBlack);
   text_layer_set_text_alignment(grandpa_layer, GTextAlignmentLeft);
   layer_add_child(window_layer, text_layer_get_layer(grandpa_layer));
   // Set up Factory Count
-  factory_layer = text_layer_create((GRect) { .origin = {bounds.size.w/2 - 20, 110}, .size = {bounds.size.w/2 + 20, 20} });
+  factory_layer = text_layer_create((GRect) { .origin = {bounds.size.w/2 - 10, 110}, .size = {bounds.size.w/2 + 10, 20} });
   text_layer_set_background_color(factory_layer, GColorBlack);
   text_layer_set_text_alignment(factory_layer, GTextAlignmentLeft);
   layer_add_child(window_layer, text_layer_get_layer(factory_layer));
   // Set up Mine Count
-  mine_layer = text_layer_create((GRect) { .origin = {bounds.size.w/2 - 20, 130}, .size = {bounds.size.w/2 + 20, 20} });
+  mine_layer = text_layer_create((GRect) { .origin = {bounds.size.w/2 - 10, 130}, .size = {bounds.size.w/2 + 10, 20} });
   text_layer_set_background_color(mine_layer, GColorBlack);
   text_layer_set_text_alignment(mine_layer, GTextAlignmentLeft);
   layer_add_child(window_layer, text_layer_get_layer(mine_layer));
@@ -237,10 +237,10 @@ static void window_unload(Window * window) {
 /* ------------------------------------------------------- */
 
 static void init(void) {
-  notification = "Getting salty aren't we?";
+  notification = "Let's get salty!";
   salt = 99999; // this needs to be loaded in instead of resetting
   sps = 0; // this needs to be loaded in instead of resetting
-  countGrandpa = countFactory = countMine = 999; // this needs to be loaded in instead of resetting
+  countGrandpa = countFactory = countMine = 0; // this needs to be loaded in instead of resetting
 
   // Load up our window and layer
   window = window_create();
