@@ -44,6 +44,65 @@ static int countFactory;
 static int countMine;
 
 /* ------------------------------------------------------- */
+/* -                    Update Functions                 - */
+/* ------------------------------------------------------- */
+
+static void updateSalt() {
+  snprintf(salt_buffer, sizeof(salt_buffer), "%d", salt);
+  text_layer_set_text(salt_layer, salt_buffer);
+  text_layer_set_font(salt_layer, fonts_get_system_font(FONT_KEY_DROID_SERIF_28_BOLD));
+  text_layer_set_text_color(salt_layer, GColorWhite);
+}
+
+static void updateSPS() {
+  snprintf(sps_buffer, sizeof(sps_buffer), "+%d / 10 sec", sps);
+  text_layer_set_text(sps_layer, sps_buffer);
+  text_layer_set_font(sps_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14_BOLD));
+  text_layer_set_text_color(sps_layer, GColorWhite);
+}
+
+static void updateNotification() {
+  text_layer_set_text(notif_layer, notification);
+  text_layer_set_text_color(notif_layer, GColorWhite);
+  text_layer_set_background_color(notif_layer, GColorBlack);
+  text_layer_set_text_alignment(notif_layer, GTextAlignmentCenter);
+}
+
+// 1 = Grandpa | 2 = Factory | 3 = Mine
+static void updateCount(int item) {
+  if (item == 1) {
+    snprintf(grandpa_buffer, sizeof(grandpa_buffer), "%d Grandpas", countGrandpa);
+    text_layer_set_text(grandpa_layer, grandpa_buffer);
+    text_layer_set_font(grandpa_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14));
+    text_layer_set_text_color(grandpa_layer, GColorWhite);
+  }
+  else if (item == 2) {
+    snprintf(factory_buffer, sizeof(factory_buffer), "%d Factories", countFactory);
+    text_layer_set_text(factory_layer, factory_buffer);
+    text_layer_set_font(factory_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14));
+    text_layer_set_text_color(factory_layer, GColorWhite);
+  }
+  else if (item == 3) {
+    snprintf(mine_buffer, sizeof(mine_buffer), "%d Mines", countMine);
+    text_layer_set_text(mine_layer, mine_buffer);
+    text_layer_set_font(mine_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14));
+    text_layer_set_text_color(mine_layer, GColorWhite);
+  }
+  else {
+    //
+  }
+}
+
+static void updateAll() {
+  updateNotification();
+  updateSalt();
+  updateSPS();
+  updateCount(1);
+  updateCount(2);
+  updateCount(3);
+}
+
+/* ------------------------------------------------------- */
 /* -                 Salty Game Functions                - */
 /* ------------------------------------------------------- */
 
@@ -100,58 +159,19 @@ static void buy(int item) {
     if (item == 1) { cost = costGrandpa; /*toBuy = "Salty Grandpa";*/ }
     if (item == 2) { cost = costFactory; /*toBuy = "Salt Factory";*/ }
     if (item == 3) { cost = costMine; /*toBuy = "Salt Mine";*/ }
-    snprintf(notification_buffer, 30, "Cost: %d Salt", cost);
+    snprintf(notification_buffer, sizeof(notification_buffer), "Cost: %d Salt", cost);
     notification = notification_buffer;
   }
+  updateNotification();
 }
 
 /* ------------------------------------------------------- */
 /* -              Pebble Smartwatch Handlers             - */
 /* ------------------------------------------------------- */
 
-static void updateSalt() {
-  snprintf(salt_buffer, 15, "%d", salt);
-  text_layer_set_text(salt_layer, salt_buffer);
-  text_layer_set_font(salt_layer, fonts_get_system_font(FONT_KEY_DROID_SERIF_28_BOLD));
-  text_layer_set_text_color(salt_layer, GColorWhite);
-}
-
-static void updateSPS() {
-  snprintf(sps_buffer, 25, "+%d / 10 sec", sps);
-  text_layer_set_text(sps_layer, sps_buffer);
-  text_layer_set_font(sps_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14_BOLD));
-  text_layer_set_text_color(sps_layer, GColorWhite);
-}
-
-// 1 = Grandpa | 2 = Factory | 3 = Mine
-static void updateCount(int item) {
-  if (item == 1) {
-    snprintf(grandpa_buffer, 25, "%d Grandpas", countGrandpa);
-    text_layer_set_text(grandpa_layer, grandpa_buffer);
-    text_layer_set_font(grandpa_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14));
-    text_layer_set_text_color(grandpa_layer, GColorWhite);
-  }
-  else if (item == 2) {
-    snprintf(factory_buffer, 25, "%d Factories", countFactory);
-    text_layer_set_text(factory_layer, factory_buffer);
-    text_layer_set_font(factory_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14));
-    text_layer_set_text_color(factory_layer, GColorWhite);
-  }
-  else if (item == 3) {
-    snprintf(mine_buffer, 25, "%d Mines", countMine);
-    text_layer_set_text(mine_layer, mine_buffer);
-    text_layer_set_font(mine_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14));
-    text_layer_set_text_color(mine_layer, GColorWhite);
-  }
-  else {
-    //
-  }
-}
-
 static void up_click_handler(ClickRecognizerRef recognizer, void * context) {
   buy(1);
-  text_layer_set_text(notif_layer, notification);
-  text_layer_set_text_color(notif_layer, GColorWhite);
+  updateNotification();
   updateSalt();
   updateSPS();
   updateCount(1);
@@ -159,8 +179,7 @@ static void up_click_handler(ClickRecognizerRef recognizer, void * context) {
 
 static void select_click_handler(ClickRecognizerRef recognizer, void * context) {
   buy(2);
-  text_layer_set_text(notif_layer, notification);
-  text_layer_set_text_color(notif_layer, GColorWhite);
+  updateNotification();
   updateSalt();
   updateSPS();
   updateCount(2);
@@ -168,20 +187,24 @@ static void select_click_handler(ClickRecognizerRef recognizer, void * context) 
 
 static void down_click_handler(ClickRecognizerRef recognizer, void * context) {
   buy(3);
-  text_layer_set_text(notif_layer, notification);
-  text_layer_set_text_color(notif_layer, GColorWhite);
+  updateNotification();
   updateSalt();
   updateSPS();
   updateCount(3);
 }
 
-static void accel_data_handler(AccelData * data, uint32_t num_samples) {
-  // update salt based on batch updates
-
+static void accel_tap_handler(AccelAxisType axis, int32_t direction) {
+  // Update salt data 
+  salt += 1;
+  
   // Generate a random salt shaking message!
   int r = rand() % 5; // 20% probability of changing message
   if (r == 0) notification = "[SALT INTENSIFIES]";
   else if (r == 1) notification = "Blood pressure rising!";
+  
+  // Update layers
+  updateSalt();
+  updateNotification();
 }
 
 static void click_config_provider(void * context) {
@@ -238,7 +261,7 @@ static void window_unload(Window * window) {
 
 static void init(void) {
   notification = "Let's get salty!";
-  salt = 99999; // this needs to be loaded in instead of resetting
+  salt = 0; // this needs to be loaded in instead of resetting
   sps = 0; // this needs to be loaded in instead of resetting
   countGrandpa = countFactory = countMine = 0; // this needs to be loaded in instead of resetting
 
@@ -254,11 +277,14 @@ static void init(void) {
   window_set_background_color(window, GColorBlack);
 
   // Load up shake detection
-  accel_data_service_subscribe(10, &accel_data_handler);
+  accel_tap_service_subscribe(&accel_tap_handler);
+  
+  // Initial display 
+  updateAll();
 }
 
 static void deinit(void) {
-  accel_data_service_unsubscribe();
+  accel_tap_service_unsubscribe();
   window_destroy(window);
 }
 
@@ -266,9 +292,6 @@ static void deinit(void) {
 
 int main(void) {
   init();
-
-  APP_LOG(APP_LOG_LEVEL_DEBUG, "Done initializing, pushed window: %p", window);
-
   app_event_loop();
   deinit();
 }
