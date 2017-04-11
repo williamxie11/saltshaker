@@ -7,4 +7,4 @@ Made for the Pebble Smartwatch for fun at HackIllinois 2014.
 
 Here's an old screenshot of the Pebble app in its early stages (I am not a very good artist...)
 
-![early screenshot](http://imgur.com/a/WrIo3)
+<img height=400 src="http://i.imgur.com/nErWXUV.jpg"/>
